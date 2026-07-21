@@ -47,16 +47,24 @@ The simulation includes several realistic constraints:
 
 ## Experiments
 
-The algorithms were evaluated on five different graph instances:
+The algorithms were evaluated on five different graph instances. One of the vertices in each graph represents the starting point (the depot), from which the agent collects the vaccines. This vertex is connected to every other vertex, allowing direct returns to the depot. For clarity, the connections to vertex 0 have been omitted from the graph visualizations.
 
 - 5 nodes
+<img src="/graphs/graph5.png" width="40%">
+
 - 8 nodes
+<img src="/graphs/graph8.png" width="40%">
+
 - 10 nodes (Variant I)
+<img src="/graphs/graph10_v1.png" width="40%">
+
 - 10 nodes (Variant II)
+<img src="/graphs/graph10_v2.png" width="40%">
+
 - 12 nodes
+<img src="/graphs/graph12.png" width="40%">
 
-For every graph we compared:
-
+For every graph experiments compared:
 - Greedy vs. Simulated Annealing
 - Nearest Neighbor vs. Highest Infection Priority
 - Different cooling schedules
@@ -79,13 +87,6 @@ Main observations:
 
 The effectiveness of each approach strongly depended on the graph structure and the optimization objective.
 
-## Technologies
-
-- C++
-- Make
-- Graph-based optimization
-- Simulated Annealing
-- Greedy Algorithms
 
 ## Build
 
