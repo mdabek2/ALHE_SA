@@ -25,4 +25,3 @@ public:
 
     void addNode(int i);
 };
-
