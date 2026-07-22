@@ -220,8 +220,7 @@ int Graph::checkNextLevelOfNeighbors(int version, int currNodeId, int level) {
             }
         }
     }
-    cout << nextIndex << endl;
-    
+   
     return nextIndex;
 }
 
@@ -349,7 +348,7 @@ void Graph::startAlgorithm(Agent &agent, int version, int startTemp, int option,
     int destinationId;
 
     nodes[startId].setClear(1);
-
+       
     //printing into a file
         fprintf(file, " %f", time * 24);
         fprintf(file, " %f", tmpTime);
@@ -358,7 +357,7 @@ void Graph::startAlgorithm(Agent &agent, int version, int startTemp, int option,
         fprintf(file, " %lld", agent.getVaccinesCount());
         fprintf(file, " %lld", casesFromStart);
         fprintf(file, " \n");
-        
+    
     while (!emptyNodes() && iteration < 100) {
         // temperature updated every iteration
         updateTemperature(startTemp, iteration, option);
@@ -377,7 +376,6 @@ void Graph::startAlgorithm(Agent &agent, int version, int startTemp, int option,
             time++;
             tmpTime -= 24;
             casesFromStart += generateNewCases(time);
-            cout << "Polnoc:" << endl;
             drawGraph();
         }
 
@@ -425,6 +423,8 @@ void Graph::startAlgorithm(Agent &agent, int version, int startTemp, int option,
         fprintf(file, " %lld", agent.getVaccinesCount());
         fprintf(file, " %lld", casesFromStart);
         fprintf(file, " \n");
+        
     }
+
     return;
 }
