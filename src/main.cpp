@@ -38,8 +38,32 @@ int main(int argc, char *argv[]) {
         cout << "Chose cooling algorithm: (1 - logarythmic, 2 - linear, 3 - geometric)" << endl;
         cin >> coolOption;
     }
-
-    cout << endl;
+    
+    fprintf(resultFile, " %s", "Algorithm_option:");
+    switch (version) {
+        case 1: 
+            fprintf(resultFile, " %s", "Greedy_Algorithm, with_nearest_neighbour_priority");
+            break;
+        case 2: 
+            fprintf(resultFile, " %s", "Greedy_Algorithm, with_highest_infection_priority");
+            break;
+        case 3:
+            fprintf(resultFile, " %s", "Simulated_Annealing, with_nearest_neighbour_priority"); 
+            fprintf(resultFile, " %s", "start.Temp");
+            fprintf(resultFile, " %d", startTemp);   
+            fprintf(resultFile, " %s", "cool.Option");
+            fprintf(resultFile, " %d", coolOption);   
+            break;
+        case 4: 
+            fprintf(resultFile, " %s", "Simulated_Annealing, with_highest_infection_priority");
+            fprintf(resultFile, " %s", "start.Temp");
+            fprintf(resultFile, " %d", startTemp);   
+            fprintf(resultFile, " %s", "cool.Option");
+            fprintf(resultFile, " %d", coolOption);   
+            break;
+    }
+    
+    fprintf(resultFile, " %s", "\n");
     fprintf(resultFile, " %s", "seed");
     fprintf(resultFile, " %d", seed);
     fprintf(resultFile, " %s", "\n");
@@ -50,8 +74,11 @@ int main(int argc, char *argv[]) {
     fprintf(resultFile, " %s", "n.vaccines");
     fprintf(resultFile, " %s", "all.cases");
     fprintf(resultFile, " \n");
+
     warsaw.startAlgorithm(agent, version, startTemp, coolOption, resultFile);
    
     fclose(resultFile);
+
+    cout << "Results of the experiment were successfully saved to a resultFile.gnumeric file." << endl;
     return 0;
 }
