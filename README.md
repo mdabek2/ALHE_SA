@@ -109,5 +109,5 @@ Run the executable from the `bin` directory:
 where:
 
 - `graph_file` – input .txt file with graph description,
-- `scale` – graph scale parameter (number of nodes),
+- `scale` – graph scale parameter (typically: 1),
 - `random_seed` – seed used by `srand()`.
