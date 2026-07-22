@@ -14,6 +14,10 @@ The city is represented as a weighted graph:
 - Road capacity changes throughout the day, affecting travel times.
 - The number of infected people at each vaccination center increases exponentially until vaccines are delivered. After delivery, new infections stop accumulating at that location.
 
+Example graph for the city of Warsaw:
+
+<img src="/graphs/warszawa.png" width="50%">
+
 The objective is to determine the order in which vaccination centers should be visited in order to:
 - minimize the total delivery time,
 - minimize the total number of new infections,
@@ -50,19 +54,19 @@ The simulation includes several realistic constraints:
 The algorithms were evaluated on five different graph instances. One of the vertices in each graph represents the starting point (the depot), from which the agent collects the vaccines. This vertex is connected to every other vertex, allowing direct returns to the depot. For clarity, the connections to vertex 0 have been omitted from the graph visualizations.
 
 - 5 nodes
-<img src="/graphs/graph5.png" width="40%">
+<img src="/graphs/graph5.png" width="30%">
 
 - 8 nodes
-<img src="/graphs/graph8.png" width="40%">
+<img src="/graphs/graph8.png" width="30%">
 
 - 10 nodes (Variant I)
-<img src="/graphs/graph10_v1.png" width="40%">
+<img src="/graphs/graph10_v1.png" width="30%">
 
 - 10 nodes (Variant II)
-<img src="/graphs/graph10_v2.png" width="40%">
+<img src="/graphs/graph10_v2.png" width="30%">
 
 - 12 nodes
-<img src="/graphs/graph12.png" width="40%">
+<img src="/graphs/graph12.png" width="30%">
 
 For every graph experiments compared:
 - Greedy vs. Simulated Annealing
@@ -99,15 +103,11 @@ make
 Run the executable from the `bin` directory:
 
 ```bash
-./program <graph_file> <scale> <random_seed>
+./run <graph_file> <scale> <random_seed>
 ```
 
 where:
 
-- `graph_file` – input graph description,
-- `scale` – simulation scale parameter,
+- `graph_file` – input .txt file with graph description,
+- `scale` – graph scale parameter (number of nodes),
 - `random_seed` – seed used by `srand()`.
-
-## Project Goal
-
-The purpose of this project was to compare a deterministic greedy approach with a stochastic optimization technique (Simulated Annealing) for solving a dynamic vaccine distribution problem under changing traffic conditions and epidemic spread.
