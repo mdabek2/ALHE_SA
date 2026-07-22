@@ -51,4 +51,3 @@ public:
     void startAlgorithm(Agent &agent, int version, int startTemp, int option, FILE *file);
 
 };
-
