@@ -45,4 +45,3 @@ public:
 
     void addNeighbor(int i, int dist);
 };
-
